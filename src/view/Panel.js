@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Dashboard from '../components/Dashboard';
 import Mixin from './CustomMixin';
-
+import ActionCreators from '../actions/ActionCreators';
 const Panel = (props) => {
   return(
         <div className="col-md-4">
@@ -21,7 +21,7 @@ const mapStateToProps =(state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     loadDashboard : function() {
-      return dispatch({type: 'LOAD_DASHBOARD'});
+      return dispatch(ActionCreators.loadDashboard());
     }
   };
 }
