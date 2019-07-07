@@ -3,10 +3,9 @@ class TravelServiceApi {
         return new Promise((resolve) => {
             setTimeout(() => {
                 resolve(Object.assign({}, {
-                    email : "andresmijares@gmail.com",
-                    repository: "https://github.com/andresmijares/distributed-async-react-redux-saga"
+                    email : "anhthuc@gmail.com",
                 }))
-            },3500)
+            },1500)
         })
     }
 
@@ -18,7 +17,7 @@ class TravelServiceApi {
                     flightID : "AR1973",
                     date : "10/27/2016 16:00PM"
                 }))
-            },3000)
+            },2000)
         })
     }
 
@@ -45,7 +44,7 @@ class TravelServiceApi {
                     date: date,
                     forecast: "rain"
                 }))
-            },2000)
+            },3000)
         })
     }
 }

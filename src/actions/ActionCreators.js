@@ -1,28 +1,21 @@
-import { FETCH_USER_SUCCESS, FETCH_USER_FAIL, FETCH_DASHBOARD_SUCCESS, FETCH_DASHBOARD_FAIL, LOAD_DASHBOARD } from '../constants/ActionTypes';
+import { 
+    FETCH_USER,
+    FETCH_DEPARTURE,
+    FETCH_FLIGHT,
+    FETCH_FORECAST
+} from '../constants/ActionTypes';
 
 export default {
-    fetchUserSuccess: (user) => ({
-        type: FETCH_USER_SUCCESS,
-        data: user
+    fetchUsers: () => ({
+        type: FETCH_USER
     }),
-    fetchUserFail: (error) => ({
-        type: FETCH_USER_FAIL,
-        data: error
+    fetchDeparture: () => ({
+        type: FETCH_DEPARTURE
     }),
-    fetchDashboardSuccess: (forecast, flight, departure) => ({
-        type: FETCH_DASHBOARD_SUCCESS,
-        data: {
-            forecast,
-            flight,
-            departure
-        }
-
+    fetchFlight: () => ({
+        type: FETCH_FLIGHT
     }),
-    fetchDashboardFail: (error) => ({
-        type: FETCH_DASHBOARD_FAIL,
-        data: error
-    }),
-    loadDashboard: () => ({
-        type: LOAD_DASHBOARD
-    })
+    fetchForecast: () => ({
+        type: FETCH_FORECAST
+    }),    
 }

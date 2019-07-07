@@ -1,14 +1,17 @@
-import { takeLatest , fork } from 'redux-saga/effects';
+import { all , fork } from 'redux-saga/effects';
 
-import { loadDashboardSequenced } from './loadDashboardSequenced';
-import { loadUser } from './UserSaga';
-import { LOAD_DASHBOARD } from '../constants/ActionTypes';
+import UserSaga from './UserSaga';
+import FlightSaga from './FlightSaga';
+import DepartureSaga from './DepartureSaga';
+import ForecastSaga from './ForecastSaga';
 
 function* RootSaga() {
-    yield[
-        fork(loadUser),
-        takeLatest(LOAD_DASHBOARD, loadDashboardSequenced)
-    ]
+    yield all ([
+        fork(UserSaga),
+        fork(FlightSaga),
+        fork(DepartureSaga),
+        fork(ForecastSaga),
+    ]);
 }
 
 export default RootSaga;

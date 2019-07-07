@@ -1,10 +1,14 @@
 import { combineReducers } from 'redux';
-
+import departureReducer from './DepartureReducer';
+import flightReducer from './FlightReduce';
+import forecastReducer from './ForecastReducer';
 import user from './UserReducer';
-import { dashboard } from './DashboardReducer';
+
 const RootReducer = combineReducers({
     user,
-    dashboard
+    departure: departureReducer,
+    flight: flightReducer,
+    forecast: forecastReducer
 });
 
 export default RootReducer;
